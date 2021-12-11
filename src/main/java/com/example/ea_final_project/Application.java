@@ -20,6 +20,7 @@ public class Application {
         ICourseService courseService = context.getBean(CourseService.class);
         IFacultyService facultyService = context.getBean(FacultyService.class);
         IAcademicBlockService blockService = context.getBean(AcademicBlockService.class);
+        IRegistrationGroupService registrationGroupService = context.getBean(RegistrationGroupService.class);
 
         State state = new State("Iowa");
         Country country = new Country("United States");
@@ -36,6 +37,12 @@ public class Application {
 //        facultyService.create(faculty);
 
         AcademicBlock block = new AcademicBlock("December 2021", "2021-12A-12D-", Semester.WINTER, LocalDate.now(), LocalDate.now());
-        blockService.create(block);
+//        blockService.create(block);
+
+        RegistrationGroup group = new RegistrationGroup();
+        group.addStudent(student);
+        group.addAcademicBlock(block);
+        registrationGroupService.create(group);
+
     }
 }
