@@ -14,12 +14,14 @@ public class Faculty {
     @Id
     @GeneratedValue
     private Integer id;
-    private String name;
+    private String firstname;
+    private String lastname;
     private String email;
     private String title;
 
-    public Faculty(String name, String email, String title) {
-        this.name = name;
+    public Faculty(String firstname, String lastname, String email, String title) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.title = title;
     }
