@@ -15,6 +15,7 @@ public class Application {
         IAddressService addressService = context.getBean(AddressService.class);
         IStudentService studentService = context.getBean(StudentService.class);
         ICourseService courseService = context.getBean(CourseService.class);
+        IFacultyService facultyService = context.getBean(FacultyService.class);
 
         State state = new State("Iowa");
         Country country = new Country("United States");
@@ -25,7 +26,9 @@ public class Application {
 //        studentService.create(student);
 
         Course course = new Course("ASD", "CS503", "Advanced software development");
-        courseService.create(course);
+//        courseService.create(course);
 
+        Faculty faculty = new Faculty("John", "John@gmail.com", "Professor");
+        facultyService.create(faculty);
     }
 }
