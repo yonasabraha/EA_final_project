@@ -22,6 +22,7 @@ public class Application {
         IAcademicBlockService blockService = context.getBean(AcademicBlockService.class);
         IRegistrationGroupService registrationGroupService = context.getBean(RegistrationGroupService.class);
         ICourseOfferingService courseOfferingService = context.getBean(CourseOfferingService.class);
+        IRegistrationService registrationService = context.getBean(RegistrationService.class);
 
         State state = new State("Iowa");
         Country country = new Country("United States");
@@ -48,5 +49,7 @@ public class Application {
         CourseOffering courseOffering = new CourseOffering("2021-12A-12D", 40, course, faculty, block);
 //        courseOfferingService.create(courseOffering);
 
+        Registration registration = new Registration(courseOffering, student);
+        registrationService.create(registration);
     }
 }
