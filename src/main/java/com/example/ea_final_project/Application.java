@@ -1,10 +1,13 @@
 package com.example.ea_final_project;
 
 import com.example.ea_final_project.model.*;
+import com.example.ea_final_project.model.utils.Semester;
 import com.example.ea_final_project.service.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class Application {
@@ -16,6 +19,7 @@ public class Application {
         IStudentService studentService = context.getBean(StudentService.class);
         ICourseService courseService = context.getBean(CourseService.class);
         IFacultyService facultyService = context.getBean(FacultyService.class);
+        IAcademicBlockService blockService = context.getBean(AcademicBlockService.class);
 
         State state = new State("Iowa");
         Country country = new Country("United States");
@@ -29,6 +33,9 @@ public class Application {
 //        courseService.create(course);
 
         Faculty faculty = new Faculty("John", "John@gmail.com", "Professor");
-        facultyService.create(faculty);
+//        facultyService.create(faculty);
+
+        AcademicBlock block = new AcademicBlock("December 2021", "2021-12A-12D-", Semester.WINTER, LocalDate.now(), LocalDate.now());
+        blockService.create(block);
     }
 }
