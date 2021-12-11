@@ -10,7 +10,7 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/cs544 #change to your database port and name
     username: root #change to your database user
-    password: default_password #change to your database password
+    password: T1la@mysql #change to your database password
     driverClassName: com.mysql.cj.jdbc.Driver
     hikari:
       maximumPoolSize: 10
