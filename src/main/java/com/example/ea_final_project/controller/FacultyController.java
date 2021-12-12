@@ -28,7 +28,7 @@ public class FacultyController {
         return service.create(faculty);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Faculty update(@PathVariable Integer id, @RequestBody Faculty faculty) {
         Faculty persistedFaculty = service.findById(faculty.getId());
         if (persistedFaculty != null) {
