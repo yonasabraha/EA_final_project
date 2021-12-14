@@ -23,5 +23,4 @@ public class Address {
 //    private Country country;
 //    @ManyToOne(cascade = CascadeType.PERSIST)
 //    private State state;
-
 }
