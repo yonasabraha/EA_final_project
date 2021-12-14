@@ -8,7 +8,7 @@ spring:
       name: app-user #default security user
       password: 123456 #default security password
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/my-schema #change to your database port and name
+    url: jdbc:mysql://127.0.0.1:3306/ea-project #change to your database port and name
     username: root #change to your database user
     password: root #change to your database password
     driverClassName: com.mysql.cj.jdbc.Driver
@@ -17,7 +17,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
