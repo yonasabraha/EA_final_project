@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/AcademicBlock")
+@RequestMapping("/academicBlocks")
 public class AcademicBlockController {
     @Autowired
     AcademicBlockService service;

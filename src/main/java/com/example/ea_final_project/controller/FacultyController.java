@@ -30,7 +30,7 @@ public class FacultyController {
 
     @PatchMapping("/{id}")
     public Faculty update(@PathVariable Integer id, @RequestBody Faculty faculty) {
-        Faculty persistedFaculty = service.findById(faculty.getId());
+        Faculty persistedFaculty = service.findById(id);
         if (persistedFaculty != null) {
             persistedFaculty.setFirstname(faculty.getFirstname());
             persistedFaculty.setLastname(faculty.getLastname());

@@ -30,7 +30,7 @@ public class AddressController {
 
     @PatchMapping("/{id}")
     public Address update(@PathVariable Integer id, @RequestBody Address address) {
-        Address persistedAddress = service.findById(address.getId());
+        Address persistedAddress = service.findById(id);
         if (persistedAddress != null) {
             persistedAddress.setStreet(address.getStreet());
             persistedAddress.setCity(address.getCity());
